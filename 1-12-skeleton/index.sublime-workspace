@@ -1,0 +1,265 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"mari",
+				"margin"
+			],
+			[
+				"player",
+				"Player"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"ali",
+				"align-items"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 87.0,
+		"last_filter": "json",
+		"selected_items":
+		[
+			[
+				"json",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"format",
+				"Format: Javascript"
+			],
+			[
+				"form",
+				"Format: Javascript"
+			],
+			[
+				"sin",
+				"Set Syntax: JavaScript Next"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"FORMAT",
+				"Format: Javascript"
+			],
+			[
+				"JSON",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"FORM",
+				"Format: Javascript"
+			],
+			[
+				"indent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/mindvalley/Work/Unity3D/Projects/560/GreatGame/Assets/Scripts/Cube.cs",
+		"/Users/mindvalley/Work/iOS/Projects/Mobile_iOS_MVA-Home/Pods/Target Support Files/Pods-MVA Home DEV/Pods-MVA Home DEV.release.xcconfig",
+		"/Users/mindvalley/Downloads/Youtube_links_in_production_-_558.js",
+		"/Users/mindvalley/Library/Application Support/Sublime Text 3/Packages/User/JsFormat.sublime-settings",
+		"/Users/mindvalley/Work/iOS/Projects/Mobile_iOS_MVA-Home/MVA Home/Assets/Assets.xcassets/Media/Audio/btnRewind10.imageset/Contents.json",
+		"/Users/mindvalley/Work/Unity3D/Projects/544/GetFruits/Assets/Scripts/UnityAdsButton.cs",
+		"/Users/mindvalley/Work/Unity3D/Projects/544/GetFruits/Assets/Scripts/GameController.cs",
+		"/Users/mindvalley/Work/Unity3D/Projects/550/GetFruits/Assets/Timer.cs",
+		"/Users/mindvalley/Library/Application Support/Sublime Text 3/Packages/JsFormat/JsFormat.sublime-settings",
+		"/Users/mindvalley/Library/Application Support/Sublime Text 3/Packages/JsFormat/Default (OSX).sublime-keymap",
+		"/Users/mindvalley/Desktop/test_youtube.html",
+		"/Users/mindvalley/Library/Application Support/Sublime Text 3/Packages/JSON Reindent/JSONReindent.sublime-settings",
+		"/Users/mindvalley/Work/iOS/Projects/Mobile_iOS_MVA-Home/Pods/Manifest.lock",
+		"/Users/mindvalley/Work/iOS/Projects/Mobile_iOS_MVA-Home/Podfile",
+		"/Users/mindvalley/Work/iOS/Projects/Mobile_iOS_MVA-Home/fastlane/Fastfile",
+		"/Users/mindvalley/Work/iOS/Projects/Mobile_iOS_MVA-Home/MVA Home/Localization/Base.lproj/Localizable.stringsdict",
+		"/Users/mindvalley/Downloads/Resident_Evil.cue",
+		"/Users/mindvalley/Downloads/Resident Evil (E) [SLES-00200].ecm",
+		"/Users/mindvalley/Downloads/bipbopall.m3u8",
+		"/Users/mindvalley/Downloads/arrow.scm",
+		"/Users/mindvalley/Desktop/System.log",
+		"/Users/mindvalley/Downloads/Darkside.itermcolors.html",
+		"/Users/mindvalley/iTerm2Colors/Darkside.itermcolors",
+		"/Users/mindvalley/Work/NodeJS/Projects/WorkNews/persistence/userPersistence.js"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"king",
+			"fisher",
+			"king",
+			"scru",
+			"/^.*(?:youtu.be\\/|v\\/|u\\/\\w\\/|embed\\/|watch\\?v=)([^#\\&\\?]{11,11}).*/",
+			"/?.*(?:youtu.be\\\\/|v\\\\/|u/\\\\w/|embed\\\\/|watch\\\\?.*&?v=)",
+			"+",
+			"\"",
+			"onPlayerReady",
+			"on",
+			"onPlayerReady",
+			"start",
+			"play",
+			"emails = values[:test_email] ? values[:test_email] : ['hannah@mindvalley.com', 'choudhari_abhishek@hotmail.com', 'olya@mindvalley.com', 'sigute@mindvalley.com', 'tushar@mindvalley.com', 'colton@mindvalley.com', 'liubov@mindvalley.com', ",
+			"= "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

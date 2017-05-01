@@ -1,6 +1,52 @@
-
 (function() {
   'use strict';
+
+  var injectedForecast = {
+    key: 'newyork',
+    label: 'New York, NY',
+    currently: {
+      time: 1453489481,
+      summary: 'Clear',
+      icon: 'partly-cloudy-day',
+      temperature: 52.74,
+      apparentTemperature: 74.34,
+      precipProbability: 0.20,
+      humidity: 0.77,
+      windBearing: 125,
+      windSpeed: 1.52
+    },
+    daily: {
+      data: [{
+        icon: 'clear-day',
+        temperatureMax: 55,
+        temperatureMin: 34
+      }, {
+        icon: 'rain',
+        temperatureMax: 55,
+        temperatureMin: 34
+      }, {
+        icon: 'snow',
+        temperatureMax: 55,
+        temperatureMin: 34
+      }, {
+        icon: 'sleet',
+        temperatureMax: 55,
+        temperatureMin: 34
+      }, {
+        icon: 'fog',
+        temperatureMax: 55,
+        temperatureMin: 34
+      }, {
+        icon: 'wind',
+        temperatureMax: 55,
+        temperatureMin: 34
+      }, {
+        icon: 'partly-cloudy-day',
+        temperatureMax: 55,
+        temperatureMin: 34
+      }]
+    }
+  };
 
   var weatherAPIUrlBase = 'https://publicdata-weather.firebaseio.com/';
 
@@ -40,7 +86,17 @@
     var key = selected.value;
     var label = selected.textContent;
     app.getForecast(key, label);
-    app.selectedCities.push({key: key, label: label});
+    
+    var cityData = {
+      key: key,
+      label: label
+    };
+
+    // My solution
+    // dao.saveCity(cityData);
+
+    app.selectedCities.push(cityData);
+    app.saveSelectedCities()
     app.toggleAddDialog(false);
   });
 
@@ -49,6 +105,23 @@
     app.toggleAddDialog(false);
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    window.localforage.getItem('selectedCities', function(err, cities) {
+      if (cities) {
+        app.selectedCities = cities;
+        app.selectedCities.forEach(function(item) {
+          app.getForecast(item.key, item.label);
+        });
+      } else {
+        app.updateForecastCard(injectedForecast);
+        app.selectedCities = [{
+          key: injectedForecast.key,
+          label: injectedForecast.label
+        }];
+        app.saveSelectedCities();
+      }
+    });
+  });
 
   /*****************************************************************************
    *
@@ -77,9 +150,16 @@
       app.container.appendChild(card);
       app.visibleCards[data.key] = card;
     }
+
+    // Verify data is newer than what we already have, if not, bail.
+    var dateElem = card.querySelector('.date');
+    if (dateElem.getAttribute('data-dt') >= data.currently.time) {
+      return;
+    }
+
+    dateElem.setAttribute('data-dt', data.currently.time);
+    dateElem.textContent = new Date(data.currently.time * 1000);
     card.querySelector('.description').textContent = data.currently.summary;
-    card.querySelector('.date').textContent =
-      new Date(data.currently.time * 1000);
     card.querySelector('.current .icon').classList.add(data.currently.icon);
     card.querySelector('.current .temperature .value').textContent =
       Math.round(data.currently.temperature);
@@ -116,6 +196,26 @@
     }
   };
 
+  app.saveSelectedCities = function() { 
+    window.localforage.setItem('selectedCities', app.selectedCities)
+  };
+
+  app.updateForecastsWithSavedCities = function() {
+    dao.loadCities(function(err, cities) {
+      if (!err && cities) {
+
+        for (var i = cities.length - 1; i >= 0; i--) {
+          var city = cities[i]
+          app.getForecast(city.key, city.label);
+          app.selectedCities.push(city);
+        }
+
+      } else {
+        app.updateForecastCard(injectedForecast);
+      }
+
+    });
+  };
 
   /*****************************************************************************
    *
@@ -126,6 +226,23 @@
   // Gets a forecast for a specific city and update the card with the data
   app.getForecast = function(key, label) {
     var url = weatherAPIUrlBase + key + '.json';
+
+    if ('caches' in window) {
+      caches.match(url).then(function(response) {
+        if (response) {
+          response.json().then(function(json) {
+            // only if the request is pending.
+            if (app.hasRequestPending) {
+              json.key = key;
+              json.label = label;
+              app.updateForecastCard(json);
+            }
+          });
+        }
+      });
+    }
+
+    app.hasRequestPending = true;
     // Make the XHR to get the data, then update the card
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
@@ -149,5 +266,16 @@
       app.getForecast(key);
     });
   };
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('/service-worker.js')
+      .then(function() {
+        console.log('Service Worker Registered');
+      });
+  }
+
+  // My solution
+  // app.updateForecastsWithSavedCities()
 
 })();

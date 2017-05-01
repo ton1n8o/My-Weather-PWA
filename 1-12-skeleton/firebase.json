@@ -1,0 +1,9 @@
+{
+  "firebase": "myweatherapp-ce62b",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
