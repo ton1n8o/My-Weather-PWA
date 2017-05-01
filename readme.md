@@ -1,7 +1,4 @@
-# Udacity UD811 Course Material
-
-These are the course materials for UD811.
-
+# Progressive Web App created based on Udacity UD811 Course Material
 
 ## Firebase Weather API
 
